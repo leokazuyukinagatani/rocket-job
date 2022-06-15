@@ -113,5 +113,37 @@ main {
   font-weight: var(--fw-regular);
   color: var(--fc-secondary-dark);
 
+}
 
+header {
+  animation: topdown 700ms;
+
+}
+
+main {
+  animation: downtop 700ms 350ms backwards;
+}
+
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-1.5rem);
+
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
