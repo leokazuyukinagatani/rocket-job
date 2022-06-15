@@ -34,6 +34,8 @@ body {
   margin: 0 auto;
 }
 
+
+
 img {
   width: 100%;
   height: auto;
@@ -51,6 +53,8 @@ header {
   font-family: var(--ff-heading);
 
   text-align: center;
+  animation: topdown 700ms;
+
 }
 header p {
   color: var(--fc-secondary);
@@ -72,6 +76,8 @@ header h1 {
 main {
   display: grid;
   gap: 3.2rem;
+  animation: downtop 700ms 350ms backwards;
+
 }
 
 .card {
@@ -90,7 +96,7 @@ main {
   position: absolute;
   bottom: 5.2rem;
   left: 2.8rem;
-  font-size: var(--fs-heading);
+  font-size: 4.0rem;
   font-weight: var(--fw-extrabold);
 
   display: flex;
@@ -108,20 +114,11 @@ main {
 
   border-radius: 2rem;
   background-color: var(--fc-primary);
- 
+  
   font-size: var(--fs-body);
   font-weight: var(--fw-regular);
   color: var(--fc-secondary-dark);
 
-}
-
-header {
-  animation: topdown 700ms;
-
-}
-
-main {
-  animation: downtop 700ms 350ms backwards;
 }
 
 
@@ -146,4 +143,38 @@ main {
     opacity: 1;
     transform: translateY(0);
   }
+}
+@media(min-width: 700px) {
+  :root {
+    --fs-heading: 5.6rem;
+  }
+
+  .page {
+    max-width: 117rem;
+    padding: 0 5rem;
+  }
+
+  main{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media(min-width: 930px) {
+  main{
+    grid-template-areas: "A B B" 
+    "C C D";
+  }
+
+  main div:nth-child(1) {
+    grid-area: A;
+  }
+  main div:nth-child(2) {
+    grid-area: B;
+  }
+  main div:nth-child(3) {
+    grid-area: C;
+  }
+  main div:nth-child(4) {
+    grid-area: D;
+  }
+
 }
